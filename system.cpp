@@ -10,12 +10,6 @@
 
 using namespace std;
 
-/*
-The following 3 helper functions may be useful in add/swap/drop function. You may implement them if you find them useful.
-If not, you can remove these 3 helper functions as we will NOT set any test case testing these helper functions.
-*/
-
-// Helper function: add the Student to the end of the waitlist of the Course.
 void join_waitlist(const int student_id, Course *course)
 {
     Wait_List *wait_list = course->get_wait_list();
@@ -33,7 +27,6 @@ void join_waitlist(const int student_id, Course *course)
     }
 }
 
-// Helper function: find the index of a course within the enrolled course list of a student.
 int search_course_index(const Student *const student, const char *const course_name)
 {
     int num_enrolled_course = student->get_num_enrolled_course();
@@ -44,7 +37,6 @@ int search_course_index(const Student *const student, const char *const course_n
     return -1;
 }
 
-// Helper function: find the index of the student_id in the enrolled student list
 int search_student_id(const int student_id, const Course *const course)
 {
     int *sid_list = course->get_students_enrolled();

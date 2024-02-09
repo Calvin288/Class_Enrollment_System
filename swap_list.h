@@ -11,7 +11,6 @@ class Swap {
     ~Swap();
 };
 
-// Swap List is a wrapper for Swap, the purpose is to make the copy constructor meaningful
 class Swap_List{
     private:
     Swap* head;

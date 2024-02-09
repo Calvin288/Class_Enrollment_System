@@ -46,7 +46,6 @@ Student* Student_Database::get_student_by_id(const int student_id) const {
     return nullptr;
 }
 
-// Helper function for debugging
 void Student_Database::print_all_students() const {
     cout << "PRINTING ALL STUDENT INFORMATION: " << endl;
     for(int i = 0; i < this->size; ++i) {

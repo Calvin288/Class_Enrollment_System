@@ -37,7 +37,7 @@ Course::Course(const Course &course)
 
 Course::~Course()
 {
-    // TODO
+
     if (name != nullptr)
         delete[] name;
     delete wait_list;

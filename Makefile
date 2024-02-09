@@ -1,13 +1,24 @@
-CPPFLAGS = -std=c++11
-OBJECTS = course_database.o course.o main.o student_database.o student.o swap_list.o system.o wait_list.o
+# Compiler settings
+CXX = g++-13
 
-all: pa1.exe
+# Source files
+SRCS = course_database.cpp main.cpp student_database.cpp student.cpp swap_list.cpp system.cpp wait_list.cpp course.cpp
 
-pa1.exe: $(OBJECTS)
-	g++ -o $@ $(CPPFLAGS) $^
+# Object files
+OBJS = $(SRCS:.cpp=.o)
+
+# Target executable
+TARGET = main
+
+.PHONY: all clean
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 %.o: %.cpp
-	g++ $(CPPFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm  -f  *.o *.exe
+	rm -f $(OBJS) $(TARGET)

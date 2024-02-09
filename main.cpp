@@ -13,7 +13,7 @@ int main()
 
     switch (test_case)
     {
-    case 1: // Admit one student
+    case 1:
     {
         System *system = new System(20, 50);
 
@@ -24,7 +24,7 @@ int main()
     }
     break;
 
-    case 2: // Add one course
+    case 2:
     {
         System *system = new System(20, 50);
 
@@ -35,7 +35,7 @@ int main()
     }
     break;
 
-    case 3: // Add multiple students
+    case 3:
     {
         System *system = new System(20, 50);
 
@@ -49,7 +49,7 @@ int main()
     }
     break;
 
-    case 4: // Add multiple courses
+    case 4:
     {
         System *system = new System(20, 50);
 
@@ -64,7 +64,7 @@ int main()
     }
     break;
 
-    case 5: // Student overload: failure because of not enough gpa.
+    case 5:
     {
         System *system = new System(20, 50);
 
@@ -83,7 +83,7 @@ int main()
     }
     break;
 
-    case 6: // Student overload: success
+    case 6:
     {
         System *system = new System(20, 50);
 
@@ -103,7 +103,7 @@ int main()
     }
     break;
 
-    case 7: // Simple add function
+    case 7:
     {
         System *system = new System(20, 50);
 
@@ -153,7 +153,7 @@ int main()
     }
     break;
 
-    case 8: // Multiple add function calls, reaching credit limit (Array: Insertion)
+    case 8:
     {
         System *system = new System(20, 50);
 
@@ -179,7 +179,7 @@ int main()
         system->add(1000, "COMP1022P");
         system->add(1000, "ECON1000");
         system->add(1000, "MATH1003");
-        // system->add(1000, "LANG1002A");
+        system->add(1000, "LANG1002A");
 
         system->swap(1000, "COMP1000", "COMP2012");
         system->drop(1000, "COMP2012");
@@ -219,7 +219,7 @@ int main()
     }
     break;
 
-    case 9: // Same as case 8 but with deep copy
+    case 9:
     {
         System *system = new System(20, 50);
 
@@ -251,12 +251,24 @@ int main()
     }
     break;
 
-    case 10: // Multiple adds (Array: Insertion)
+    case 10:
     {
+        System *system = new System(20, 50);
+
+        system->admit("Adam", 1000, 3.8);
+        system->add_course("COMP2012", 4, 3);
+        system->add_course("COMP2012H", 5, 3);
+
+        system->add(1000, "COMP2012");
+        system->print_info();
+
+        system->swap(1000, "COMP2012", "COMP2012H");
+        system->print_info();
+        delete system;
     }
     break;
 
-    case 11: // Simple drop
+    case 11:
     {
         System *system = new System(20, 50);
 
@@ -272,7 +284,7 @@ int main()
     }
     break;
 
-    case 12: // Multiple students enrolled in a course and no one is waiting, a student drops (Array Deletion)
+    case 12:
     {
         System *system = new System(20, 50);
 
@@ -284,7 +296,7 @@ int main()
         system->admit("Ron", 1005, 2.0);
         system->admit("Hermione", 1006, 4.3);
 
-        system->add_course("COMP2012", 4, 10); // Quota: 10
+        system->add_course("COMP2012", 4, 10);
 
         system->add(1000, "COMP2012");
         system->add(1001, "COMP2012");
@@ -301,7 +313,7 @@ int main()
     }
     break;
 
-    case 13: // Multiple students waiting in the waitlist, and someone in the course drops (Wait List: deletion)
+    case 13:
     {
         System *system = new System(20, 50);
 
@@ -313,26 +325,25 @@ int main()
         system->admit("Ron", 1005, 2.0);
         system->admit("Hermione", 1006, 4.3);
 
-        system->add_course("COMP2012", 4, 3); // Quota: 3
+        system->add_course("COMP2012", 4, 3); 
 
         system->add(1000, "COMP2012");
         system->add(1001, "COMP2012");
         system->add(1002, "COMP2012");
-        system->add(1003, "COMP2012"); // Student 1003 gets into the wait list of COMP2012
-        system->add(1004, "COMP2012"); // Student 1004 gets into the wait list of COMP2012
-        system->add(1005, "COMP2012"); // Student 1005 gets into the wait list of COMP2012
-        system->add(1006, "COMP2012"); // Student 1006 gets into the wait list of COMP2012
+        system->add(1003, "COMP2012"); 
+        system->add(1004, "COMP2012");
+        system->add(1005, "COMP2012");
+        system->add(1006, "COMP2012"); 
 
-        // system->print_info();
 
-        system->drop(1001, "COMP2012"); // Student 1001 drops, student 1003 should get into COMP2012
+        system->drop(1001, "COMP2012"); 
 
         system->print_info();
         delete system;
     }
     break;
 
-    case 14: // Same as case 13 but with deep copy
+    case 14:
     {
         System *system = new System(2, 10);
 
@@ -344,17 +355,17 @@ int main()
         system->admit("Ron", 1005, 2.0);
         system->admit("Hermione", 1006, 4.3);
 
-        system->add_course("COMP2012", 4, 3); // Quota: 3
+        system->add_course("COMP2012", 4, 3); 
 
         system->add(1000, "COMP2012");
         system->add(1001, "COMP2012");
         system->add(1002, "COMP2012");
-        system->add(1003, "COMP2012"); // Student 1003 gets into the wait list of COMP2012
-        system->add(1004, "COMP2012"); // Student 1004 gets into the wait list of COMP2012
-        system->add(1005, "COMP2012"); // Student 1005 gets into the wait list of COMP2012
-        system->add(1006, "COMP2012"); // Student 1006 gets into the wait list of COMP2012
+        system->add(1003, "COMP2012"); 
+        system->add(1004, "COMP2012");
+        system->add(1005, "COMP2012");
+        system->add(1006, "COMP2012"); 
 
-        system->drop(1001, "COMP2012"); // Student 1001 drops, student 1003 should get into COMP2012
+        system->drop(1001, "COMP2012"); 
 
         System *system2 = new System(*system);
         system2->print_info();
@@ -363,7 +374,7 @@ int main()
     }
     break;
 
-    case 15: // Simple swap
+    case 15: 
     {
         System *system = new System(20, 50);
 
@@ -380,7 +391,7 @@ int main()
     }
     break;
 
-    case 16: // Deadlock example
+    case 16:
     {
         System *system = new System(20, 50);
 
@@ -401,7 +412,7 @@ int main()
     }
     break;
 
-    case 17: // A drop trigger a swap (Swap List: Deletion)
+    case 17:
     {
         System *system = new System(20, 50);
 
@@ -430,7 +441,7 @@ int main()
     }
     break;
 
-    case 18: // Add operation rejected under pending add (Worst Case Credit Control)
+    case 18:
     {
         System *system = new System(20, 50);
 
@@ -449,16 +460,16 @@ int main()
 
         system->add(1001, "MATH1000");
         system->add(1002, "MATH1000");
-        system->add(1000, "MATH1000"); // Student 1000 get into the wait list of MATH1000
+        system->add(1000, "MATH1000"); 
 
-        system->add(1000, "ECON1000"); // Student 1000 is rejected by the system
+        system->add(1000, "ECON1000");
 
         system->print_info();
         delete system;
     }
     break;
 
-    case 19: // Swap operation rejected under pending swap (Worst Case Credit Control)
+    case 19:
     {
         System *system = new System(20, 50);
 
@@ -478,16 +489,16 @@ int main()
 
         system->add(1001, "SOSC1960");
         system->add(1002, "SOSC1960");
-        system->swap(1000, "MATH1000", "SOSC1960"); // Student 1000 get into the wait list of SOSC1960
+        system->swap(1000, "MATH1000", "SOSC1960");
 
-        system->swap(1000, "COMP1022P", "COMP2012H"); // Student 1000 is rejected by the system
+        system->swap(1000, "COMP1022P", "COMP2012H");
 
         system->print_info();
         delete system;
     }
     break;
 
-    case 20: // Same as case 19 but with deep copy
+    case 20: 
     {
         System *system = new System(20, 50);
 
@@ -507,9 +518,9 @@ int main()
 
         system->add(1001, "SOSC1960");
         system->add(1002, "SOSC1960");
-        system->swap(1000, "MATH1000", "SOSC1960"); // Student 1000 get into the wait list of SOSC1960
+        system->swap(1000, "MATH1000", "SOSC1960");
 
-        system->swap(1000, "COMP1022P", "COMP2012H"); // Student 1000 is rejected by the system
+        system->swap(1000, "COMP1022P", "COMP2012H");
 
         System *system2 = new System(*system);
         system2->print_info();

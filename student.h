@@ -5,17 +5,17 @@ class Swap_List;
 
 class Student {
     private:
-    char* name; // A pointer to a dynamically allocated array
+    char* name; 
     int student_id;
     double gpa;
     int max_credit;
     int curr_credit;
 
     int num_enrolled_course;
-    char** enrolled_courses; // A pointer to a 2D dynamically allocated array with the names of enrolled courses
+    char** enrolled_courses; 
 
-    int pending_credit;      // The extra number of credits the student will receive if all pending swaps are enrolled successfully
-    Swap_List* swap_list;    // A pointer to a dynamically allocated Swap_List object
+    int pending_credit;      
+    Swap_List* swap_list;    
 
     public:
     Student(const char* const name, const int student_id, const double gpa);

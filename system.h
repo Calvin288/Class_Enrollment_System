@@ -14,14 +14,12 @@ class System {
     System(const System& system);
     ~System();
 
-    // Student related functions
     void admit(const char* const name, const int student_id, const double gpa);
     bool apply_overload(const int student_id, const int request_credit);
     bool add(const int student_id, const char* const course_name);
-    bool swap(const int student_id, const char* const original_course_name, const char* const target_course_name); // Always assume that student has enrolled into the original course
-    void drop(const int student_id, const char* const course_name); // Assume student always has the course to drop
-    
-    // Course related functions
+    bool swap(const int student_id, const char* const original_course_name, const char* const target_course_name); 
+    void drop(const int student_id, const char* const course_name); 
+
     void add_course(const char* const name, const int num_credit, const int max_capacity);
     
     void print_info() const;

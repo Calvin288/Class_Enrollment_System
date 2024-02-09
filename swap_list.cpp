@@ -6,7 +6,6 @@ using namespace std;
 
 Swap::Swap(const char *const original_course_name, const char *const target_course_name, Swap *const next)
 {
-    // TODO
     this->original_course_name = new char[strlen(original_course_name) + 1];
     strcpy(this->original_course_name, original_course_name);
 
@@ -17,7 +16,6 @@ Swap::Swap(const char *const original_course_name, const char *const target_cour
 
 Swap::~Swap()
 {
-    // TODO
     if (original_course_name != nullptr)
     {
         delete[] original_course_name;
@@ -30,13 +28,11 @@ Swap::~Swap()
 
 Swap_List::Swap_List()
 {
-    // TODO
     head = nullptr;
 }
 
 Swap_List::Swap_List(const Swap_List &swap_list)
 {
-    // TODO
     if (swap_list.head == nullptr)
     {
         head = nullptr;
@@ -58,7 +54,6 @@ Swap_List::Swap_List(const Swap_List &swap_list)
 
 Swap_List::~Swap_List()
 {
-    // TODO
     if (head != nullptr)
     {
         Swap *temp = head->next;

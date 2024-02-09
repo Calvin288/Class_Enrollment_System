@@ -17,7 +17,6 @@ class Student_Database {
     bool create_entry(const char* const name, const int student_id, const double gpa);
     Student* get_student_by_id(const int student_id) const;
     
-    // Helper function for debugging
     void print_all_students() const;
 
     Student** get_students() const;
