@@ -1,32 +1,35 @@
-# How to run the Course Enrollment System
+# To run the Course Enrollment System, follow these steps:
 
-1. Clone the repository
-2. Create new test cases in main.cpp using operations listed below (optional)
-3. From the terminal, run "make all"
-4. Afterwards, run "./main"
-6. Enter the test case number to view course and student information in the system
+1. Clone the repository to your local machine.
+2. Create new test cases in the main.cpp file (Optional).
+3. Open the terminal and navigate to the project directory.
+4. Run the command "make all" to compile the code.
+5. Run "./main" to execute the program.
+6. The system will prompt you to enter a test case number.
+7. Choose the desired test case number and press enter  to view course and student information.
 
-## Operations that can be done from the system:
-1. Admit new student to the student_database
+## Here are the operations that can be performed within the system:
+
+- Admit a new student to the student database:
 
 Syntax: system->admit("Adam", 1000, 3.8);
 
-2. Add new course to the course_database
+- Add a new course to the course database:
 
 Syntax: system->add_course("COMP2012", 4, 3);
 
-3. Allow student to swap courses
+- Allow a student to swap courses:
 
 Syntax: system->swap(1000, "COMP2012", "COMP2012H");
 
-4. Allow student to drop enrolled course
+- Allow a student to drop an enrolled course:
 
 Syntax: system->drop(1004, "COMP2012");
 
-5. Allow student to credit overload up to 23 credits if their GPA is greater than 3.3, and up to 30 credits if their GPA is greater than 3.7
+- Allow a student to credit overload up to 23 credits if their GPA is greater than 3.3, and up to 30 credits if their GPA is greater than 3.7:
 
 Syntax: system->apply_overload(1000, 21);
 
-6. Print student and course information:
+- Print student and course information:
 
 Syntax: system->print_info();
