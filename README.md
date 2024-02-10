@@ -1,12 +1,13 @@
-# To run the Course Enrollment System, follow these steps:
+# Course Enrollment System
+
+## To run the Course Enrollment System, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Create new test cases in the main.cpp file (Optional).
 3. Open the terminal and navigate to the project directory.
-4. Run the command "make all" to compile the code.
-5. Run "./main" to execute the program.
-6. The system will prompt you to enter a test case number.
-7. Choose the desired test case number and press enter  to view course and student information.
+4. Run the command ```make all``` to compile the code.
+5. Run ```./main``` to execute the program.
+6. Choose a test case number when prompted and press enter to view the course and student information within the system.
 
 ## Here are the operations that can be performed within the system:
 
